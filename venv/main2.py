@@ -5,7 +5,7 @@ import matplotlib.animation as animation
 g = 9.806
 s = 16
 v = 12
-alpha = 90 * np.pi / 180
+alpha = 36.35388 * np.pi / 180
 
 start_place = [0, 2]
 x0 = start_place[0]
@@ -48,8 +48,8 @@ else:
 
 fig, ax = plt.subplots()
 
-tan = np.arange(0, t, 0.01)  # time of flight into an array
-xan = np.arange(0, x, 0.01)
+tan = np.arange(0, 0.1, 0.01)  # time of flight into an array
+xan = np.arange(0, 0.1, 0.01)
 ax.scatter(target[0], target[1], c = 'red')
 line, = ax.plot(xan, v * np.sin(alpha) * xan - (0.5) * g * xan**2)   # plot of x and y in time
 
