@@ -11,7 +11,7 @@ def plot_trace(v0, alpha, file=None, **kwargs):
     # time to max height
     tp = v0 * np.sin(alpha) / g
     # converting to time range
-    t = np.linspace(0, 2 * tp, 1000)
+    t = np.arange(0, 2 * tp, 0.01)
     # x axis
     x = v0 * np.cos(alpha) * t
     # y axis
@@ -36,4 +36,4 @@ def plot_trace(v0, alpha, file=None, **kwargs):
     if file is not None:
         plt.savefig(file)
 # if __name__ == '__main__':
-    plot_trace(30, 0.5, label='trace', color='g')
+plot_trace(30, 0.5, label='trace', color='g')
