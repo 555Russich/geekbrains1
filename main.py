@@ -9,7 +9,7 @@ from jupyterthemes import jtplot
 # math.radians()  # градусы в радианы
 
 g = float(9.806)
-s = 10
+s = 2
 h = 4
 v = 12
 alpha = 31.65388  # 31.65388

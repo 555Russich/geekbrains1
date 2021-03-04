@@ -7,7 +7,7 @@ jtplot.style('onedork')
 g = float(9.806)
 s = 10
 h = 4
-v = 12
+v = 10
 alpha = 31.65388
 
 start_place = [0, 2]
