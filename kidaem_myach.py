@@ -5,10 +5,13 @@ g = 9.806
 h = 4
 s = 10
 v = 12
-alpha = 35.535 * np.pi / 180  # 35.535
+alpha = 35.5 * np.pi / 180  # 35.535
 
 # v = int(input('Enter V0: '))
-# alpha = float(input('Enter alpha(grad): ')) * np.pi / 180  # 35.535  # 90(!) # 0 (!)
+# alpha = float(input('Enter alpha(grad): ')) * np.pi / 180  # 35.535
+
+# min_alpha_rad = np.arctan(h/s)
+# min_alpha_grad = min_alpha_rad * 180 / np.pi
 
 start_place = [0, 2]
 x0 = start_place[0]
@@ -16,7 +19,7 @@ y0 = start_place[1]
 target = [s, h]
 hit = [0, 0]
 
-if v == 0 :
+if v == 0:
     x = 0
     y = 0
     t = np.sqrt(2 * h / g)
@@ -57,9 +60,9 @@ def plot_trace(file=None, **kwargs):
     plt.xlabel('X', fontsize=24)
     plt.ylabel('Y', fontsize=24)
     if target == hit:
-        plt.title('hitted', fontsize=20)
+        plt.title('hitted', fontsize=32)
     elif np.pi / 2 < alpha < 2 * np.pi:
-        plt.title('missed, wrong way', fontsize=32)
+        plt.title('missed, wrong alpha', fontsize=32)
     else: plt.title('missed', fontsize=32)
     plt.scatter(s, h)
     plt.scatter(0, 2, color='r')
