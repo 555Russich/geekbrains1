@@ -4,7 +4,7 @@ import numpy as np
 g = 9.806
 h = 4
 s = 10
-v = 0
+v = 12
 alpha = 35.535 * np.pi / 180  # 35.535
 
 # v = int(input('Enter V0: '))
