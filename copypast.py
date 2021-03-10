@@ -1,13 +1,15 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from jupyterthemes import jtplot
+# from jupyterthemes import jtplot
+#
+# jtplot.style('onedork')
 
-jtplot.style('onedork')
-
+g = 9.8066
+v0 = 12
+alpha = 0.5
 
 def plot_trace(v0, alpha, file=None, **kwargs):
     # acceleration of gravity
-    g = 9.8066
     # time to max height
     tp = v0 * np.sin(alpha) / g
     # converting to time range
@@ -17,12 +19,12 @@ def plot_trace(v0, alpha, file=None, **kwargs):
     # y axis
     y = v0 * np.sin(alpha) * t - g * (t**2) / 2
     # change size for figure
-    plt.figure(figsize=(20, 10))
+    plt.figure(figsize=(30, 50))
     plt.plot(x, y, **kwargs)
     # xlim
-    plt.xlim([-1, np.max(x) * 1.1])
+    plt.xlim([0, np.max(x) * 1.1])
     # ylim
-    plt.ylim([-1, np.max(y) * 1.1])
+    plt.ylim([0, np.max(y) * 1.1])
     # axis labels
     plt.xlabel('X', fontsize=24)
     plt.ylabel('Y', fontsize=24)
@@ -36,4 +38,4 @@ def plot_trace(v0, alpha, file=None, **kwargs):
     if file is not None:
         plt.savefig(file)
 # if __name__ == '__main__':
-plot_trace(30, 0.5, label='trace', color='g')
+plot_trace(v0, alpha, label='trace', color='g')
